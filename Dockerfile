@@ -1,8 +1,9 @@
 FROM alpine:3.7
 
-RUN apk update && apk add nginx
-
-#COPY ./nginx.conf /etc/nginx/nginx.conf
+RUN apk update && \
+      apk add nginx \
+              nodejs \
+              nodejs-npm
 
 COPY ./default.conf /etc/nginx/conf.d/default.conf
 
